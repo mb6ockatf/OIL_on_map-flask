@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Русская Нефть: Факты и История</title>
+  <style>
+    /* Общие стили */
+    body {
+        font-family: Arial black, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #ffffff; /* Белый фон */
+        color: #000000; /* Черный текст */
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      color: #ff8c00; /* Оранжевый заголовок */
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Шапка */
+    header {
+      background-color: #333; /* Темно-серый фон шапки */
+      color: #fff; /* Белый текст в шапке */
+      padding: 20px 0;
+      text-align: center;
+      border-bottom: 2px solid #ff8c00; /* Оранжевая полоска под шапкой */
+    }
+
+    header h1 {
+      color: #fff; /* Белый заголовок в шапке */
+    }
+
+    /* Основной контент */
+    main {
+      background-color: #fff; /* Белый фон контента */
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px; /* Скругление углов контента */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для контента */
+    }
+
+    /* Факты */
+    .fact {
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ccc; /* Линия-разделитель между фактами */
+      padding-bottom: 20px;
+    }
+
+    .fact h3 {
+      color: #ff4500; /* Оранжевый заголовок факта */
+      padding: 20px;
+      text-align: center;
+    }
+
+    .fact p {
+      margin: 0;
+    }
+
+    .criteria {
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ccc; /* Линия-разделитель между фактами */
+      padding-bottom: 20px;
+    }
+
+    .criteria h1 {
+      color: #ff8c00; /* Оранжевый заголовок */
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .criteria-button {
+      background-color: #ff8c00;
+      border: none;
+      color: #000;
+      padding: 8px 12px;
+      text-align: center;
+      text-decoration: none;
+      font-family: Arial black, sans-serif;
+      display: inline-block;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 0px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .criteria-button:hover { /* Эффект при наведении */
+      background-color: #e67a00; /* Более темный оранжевый */
+    }
+    }
+
+    /* Подвал */
+    footer {
+      background-color: #333; /* Темно-серый фон подвала */
+      color: #fff; /* Белый текст в подвале */
+      text-align: center;
+      padding: 10px 0;
+      font-size: 0.8em;
+    }
+
+    /* Медиа-запросы для адаптивности */
+    @media (max-width: 768px) {
+      .container {
+        padding: 10px;
+      }
+
+      main {
+        padding: 10px;
+      }
+
+      #imageDisplay {
+         width: 700px;
+         height: auto;
+         border: 1px solid #ccc;
+        }
+    }
+      .button-container {
+        margin-top: 10px;
+        }
+      .center {
+       display: block;
+       margin-left: auto;
+       margin-right: auto;
+       width: 40%;
+        }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Русская Нефть</h1>
+    <p>Основные факты о "черном золоте" России</p>
+  </header>
+
+  <main>
+    <div class="container">
+      <h2>Несколько интересных фактов</h2>
+    </div>
+      <div class="fact">
+        <h3>История добычи</h3>
+        <p>Добыча нефти на территории России началась в глубокой древности, но промышленная разработка началась в Баку в середине 19 века.</p>
+      </div>
+
+      <div class="fact">
+        <h3>Запасы нефти</h3>
+        <p>Россия обладает одними из крупнейших в мире доказанными запасами нефти, преимущественно расположенными в Западной Сибири и других регионах.</p>
+      </div>
+
+      <div class="fact">
+        <h3>Экспорт нефти</h3>
+        <p>Нефть является одним из основных экспортных товаров России, принося значительные доходы в государственный бюджет.</p>
+      </div>
+
+      <div class="fact">
+        <h3>Нефтяные компании</h3>
+        <p>Крупнейшие нефтяные компании России включают "Роснефть", "Лукойл" и "Газпром нефть", которые играют ключевую роль в мировой энергетике.</p>
+      </div>
+
+      <div class="fact">
+        <h3>Транспортировка</h3>
+        <p>Нефть транспортируется по нефтепроводам, таким как "Дружба" и "Восточная Сибирь - Тихий Океан" (ВСТО), а также морским путем.</p>
+      </div>
+
+    <div class="criteria">
+       <h1>Нефтяные месторождения</h1>
+       <p>Показатели выбранного месторождения</p>
+       <button class="criteria-button">Название</button>
+       <button class="criteria-button">Местонахождение</button>
+       <button class="criteria-button">Размер</button>
+    </div>
+      <div>
+          <form method="POST" action="/oil">
+              <div class="button-container">
+                  <p><select name="image">  <optgroup label="Западно-Сибирские">
+                      {% for i in range(n1) %}
+                          <option value="{{ place1[i] }}">{{place1[i]}}</option>
+                      {%endfor%}  </optgroup>
+                  <optgroup label="Волго-Уральские">
+                      {% for i in range(n2) %}
+                          <option value="{{ place2[i] }}">{{place2[i]}}</option>
+                      {%endfor%}  </optgroup>
+                  </select></p>
+                  <div>
+                      <p><input type="submit" value="Отправить"></p>
+                  </div>
+              </div>
+          </form>
+      </div>
+
+    <h1>Месторождение на карте</h1>
+     <div class="center" >
+       <img id="imageDisplay" src="{{ image_url }}" alt="Выбранное изображение">
+     </div>
+  </form>
+
+  </main>
+
+  <footer>
+    <p>Горькова Мария</p>
+  </footer>
+
+</body>
+</html>
