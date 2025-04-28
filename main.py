@@ -151,7 +151,7 @@ def login():
 
     return render_template("mainwindow.html")
 
-
+#meow
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
