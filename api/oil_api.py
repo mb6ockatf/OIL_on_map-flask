@@ -1,11 +1,9 @@
 import os
-
 import flask
 from flask import jsonify, request
 from flask import make_response
 from project.data import db_session
 from project.main import app
-
 from project.data.oil import Oil
 
 blueprint = flask.Blueprint(
@@ -46,8 +44,7 @@ def get_oil(oil_id):
 def add_oil():
     if not request.json:
         return jsonify({'error': 'Empty request'})
-    elif not all(key in request.json for key in
-                 ['title', 'coo']):
+    elif not all(key in request.json for key in ['title', 'coo']):
         return jsonify({'error': 'Bad request'})
     db_sess = db_session.create_session()
     oil = Oil(

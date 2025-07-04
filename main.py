@@ -1,23 +1,25 @@
+#!/usr/bin/env python3
+import os
+import requests
 import sqlite3
-
 import sqlalchemy
-from flask import Flask, render_template, redirect, url_for, request, current_app, flash
-
+from contextlib import contextmanager
+from werkzeug.security import generate_password_hash, check_password_hash
+from flask import Flask, render_template, redirect, url_for, request, \
+current_app, flash
 from data import db_session
 from data.oil import Oil
 from data.users import User
-import requests
-import os
-from contextlib import contextmanager
-from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 
 
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 
-siberianoil = ['Самотлорское', 'Салымское', 'Приобское', 'Красноленинское', 'Ванкорское']
-volgauraloil = ['Ромашкинское', 'Бавлинское', 'Новоольховско-Домоскинское', 'Арланское', 'Туймазинское', 'Ярино-Каменное']
+siberianoil = ['Самотлорское', 'Салымское', 'Приобское', 'Красноленинское',
+               'Ванкорское']
+volgauraloil = ['Ромашкинское', 'Бавлинское', 'Новоольховско-Домоскинское',
+                'Арланское', 'Туймазинское', 'Ярино-Каменное']
 n1 = len(siberianoil)
 n2 = len(volgauraloil)
 
@@ -125,7 +127,8 @@ def oil():
     except Exception as e:
         print(f"Общая ошибка: {e}")
     print(image_url)
-    return render_template('oil.html', place1=siberianoil, place2=volgauraloil, n1=n1, n2=n2, image_url=image_url)
+    return render_template('oil.html', place1=siberianoil, place2=volgauraloil,
+                           n1=n1, n2=n2, image_url=image_url)
 
 
 @app.route('/')
@@ -188,5 +191,6 @@ def register():
 
     return render_template("register.html")
 
+
 if __name__ == '__main__':
-    app.run(port=8000, host='127.0.0.1')
+    app.run(port=80, host='127.0.0.1')
